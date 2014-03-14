@@ -1,12 +1,9 @@
 list = "4 3 2 1 | 8 9 12 42"
 
 def multiply_lists(lists)
-  partition = lists.split.partition { |n| lists.split.index(n) < lists.split.index('|') }
-  partition[1].shift
-  partition.each { |a| a.map! {|n| n.to_i }}
+  partition = lists.split('|').map{ |s| s.split }.each{ |a| a.map!{ |n| n.to_i }}
   if partition[0].size != partition[1].size
-    puts "Lists must be same length."
-    exit
+    "Lists must be same length"
   else
     index = 0
     finals = []
@@ -14,8 +11,8 @@ def multiply_lists(lists)
       finals << partition[0][index] * partition[1][index]
       index += 1
     end
+    finals.join(' ')
   end
-  finals.join(" ")
 end
 
 puts multiply_lists(list)
