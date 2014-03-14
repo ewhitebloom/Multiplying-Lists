@@ -1,0 +1,5 @@
+---
+name: Multiply Lists
+difficulty: 3
+test_runner: rspec
+id: 10
