@@ -1,4 +1,4 @@
-list = "4 3 2 1 | 8 9 12 42"
+list = "4 3 2 1 | 4 9 12 42"
 
 def multiply_lists(lists)
   partition = lists.split('|').map{ |s| s.split }.each{ |a| a.map!{ |n| n.to_i }}
